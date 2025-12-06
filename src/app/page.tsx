@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import { OrderBookComponent } from "@/components/order-book";
 import { TradingPanel } from "@/components/trading-panel";
+import { TradingPositionComponent } from "@/components/trading-position";
 
 export default function Home() {
   return (
@@ -9,11 +10,13 @@ export default function Home() {
       <div className="flex">
         <div className="flex-1 flex">
           <TradingPanel />
-          <div className="w-[25%]">
+          <div className="max-w-[288px] w-full">
             <OrderBookComponent />
           </div>
         </div>
-        <div className="w-[20%]"></div>
+        <div className="max-w-[288px] w-full">
+          <TradingPositionComponent />
+        </div>
       </div>
     </>
   );

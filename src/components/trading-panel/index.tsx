@@ -58,7 +58,7 @@ export function TradingPanel() {
         {/* Trading Pair Header */}
         <div className="mb-6">
           {/* Trading Stats */}
-          <div className="mt-4 flex  gap-8 text-xs">
+          <div className="mt-4 flex gap-6 2xl:gap-8 text-xs">
             <div className="flex items-center space-x-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

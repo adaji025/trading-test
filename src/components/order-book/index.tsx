@@ -42,7 +42,7 @@ const buyOrders = [
 
 export function OrderBookComponent() {
   return (
-    <div className="w-full bg-gray-950 text-white">
+    <div className="w-full bg-foreground h-full border-l border-gray-800 text-white">
       <Tabs defaultValue="orderbook" className="w-full py-[11px]">
         <TabsList className="grid w-full grid-cols-2 rounded-none bg-foreground border-b border-gray-800 py-0">
           <TabsTrigger
@@ -60,7 +60,7 @@ export function OrderBookComponent() {
         </TabsList>
 
         <TabsContent value="orderbook" className="mt-0">
-          <div className="p-4">
+          <div className="p-2">
             {/* Order Book Header */}
             <div className="flex justify-between items-center mb-4">
               <div className="grid grid-cols-3 w-full text-xs text-gray-400 font-medium">
@@ -129,7 +129,7 @@ export function OrderBookComponent() {
           </div>
 
           {/* Bottom Controls */}
-          <div className="p-4 border-t border-gray-800">
+          <div className="p-2 border-t border-gray-800">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-emerald-400 rounded-sm"></div>
@@ -166,7 +166,7 @@ export function OrderBookComponent() {
         </TabsContent>
 
         <TabsContent value="trades" className="mt-0">
-          <div className="p-4">
+          <div className="p-2">
             {/* Trades Header */}
             <div className="grid grid-cols-3 w-full text-xs text-gray-400 font-medium mb-4">
               <span>Price</span>
