@@ -163,8 +163,8 @@ export function OrderBookComponent() {
           </div>
 
           {/* Bottom Controls */}
-          <div className="px-2 md:border-t border-gray-800">
-            <div className="flex items-center justify-between">
+          <div className="px-2">
+            <div className="flex items-center justify-between md:mt-2">
               <Image
                 src={"/value-map.svg"}
                 height={12}
@@ -174,10 +174,10 @@ export function OrderBookComponent() {
 
               <div className="flex items-center space-x-2">
                 <Select defaultValue="btc">
-                  <SelectTrigger className="w-20 h-8 bg-transparent rounded-full border-gray-700 text-white text-xs">
+                  <SelectTrigger className="w-20 h-6 bg-transparent rounded-full border-[#2D3134] text-white text-xs">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className="bg-gray-800 border-gray-700 text-white">
+                  <SelectContent className="bg-gray-800 border-[#2D3134] text-white">
                     <SelectItem value="btc">BTC</SelectItem>
                     <SelectItem value="eth">ETH</SelectItem>
                     <SelectItem value="sol">SOL</SelectItem>
@@ -185,10 +185,10 @@ export function OrderBookComponent() {
                 </Select>
 
                 <Select defaultValue="1">
-                  <SelectTrigger className="w-14 rounded-full h-8 bg-transparent border-gray-700 text-white text-xs">
+                  <SelectTrigger className="w-14 rounded-full h-8 bg-transparent border-[#2D3134] text-white text-xs">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className="bg-gray-800 border-gray-700 text-white!">
+                  <SelectContent className="bg-gray-800 border-[#2D3134] text-white!">
                     <SelectItem value="1" className="text-white!">
                       1
                     </SelectItem>

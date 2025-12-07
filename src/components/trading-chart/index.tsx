@@ -74,7 +74,7 @@ export function TradingChart() {
                   </div>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-gray-800 border-gray-700">
+              <DropdownMenuContent className="bg-gray-800 border-[#2D3134]">
                 <DropdownMenuItem className="text-gray-300 text-xs">
                   ETH-USD
                 </DropdownMenuItem>

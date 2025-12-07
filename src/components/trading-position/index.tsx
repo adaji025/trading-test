@@ -28,13 +28,13 @@ export function TradingPositionComponent() {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="rounded-full text-xs hover:text-white/90 bg-transparent border-gray-700 text-white hover:bg-gray-700 flex-1"
+              className="rounded-full text-xs hover:text-white/90 bg-transparent border-[#2D3134] text-white hover:bg-gray-700 flex-1"
             >
               {orderType}
               <ChevronDown className="w-4 h-4 ml-2" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-gray-800 border-gray-700">
+          <DropdownMenuContent className="bg-gray-800 border-[#2D3134]">
             <DropdownMenuItem
               className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setOrderType("Cross")}
@@ -54,13 +54,13 @@ export function TradingPositionComponent() {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="rounded-full hover:text-white/90 bg-transparent border-gray-700 text-white hover:bg-gray-700 flex-1 text-xs"
+              className="rounded-full hover:text-white/90 bg-transparent border-[#2D3134] text-white hover:bg-gray-700 flex-1 text-xs"
             >
               {leverage}
               <ChevronDown className="w-4 h-4 ml-2" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-gray-800 border-gray-700">
+          <DropdownMenuContent className="bg-gray-800 border-[#2D3134]">
             <DropdownMenuItem
               className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setLeverage("1x")}
@@ -92,13 +92,13 @@ export function TradingPositionComponent() {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="rounded-full hover:text-white/90 bg-transparent text-xs border-gray-700 text-white hover:bg-gray-700 flex-1"
+              className="rounded-full hover:text-white/90 bg-transparent text-xs border-[#2D3134] text-white hover:bg-gray-700 flex-1"
             >
               {limitType}
               <ChevronDown className="w-4 h-4 ml-2" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-gray-800 border-gray-700">
+          <DropdownMenuContent className="bg-gray-800 border-[#2D3134]">
             <DropdownMenuItem
               className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setLimitType("Market")}
@@ -158,17 +158,17 @@ export function TradingPositionComponent() {
 
       <div className="space-y-1">
         {/* Price Input */}
-        <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+        <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
           <label className="text-custom-light text-xs">Price</label>
           <span className="text-custom-light text-xs">USDC</span>
         </div>
         {/* Size Input */}
-        <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+        <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
           <label className="text-custom-light text-xs">Size</label>
           <span className="text-custom-light text-xs">BTC</span>
         </div>
 
-        <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+        <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
           <span className="text-custom-light text-xs">0.00</span>
           <span className="text-custom-light text-xs">USDC</span>
         </div>
@@ -204,13 +204,13 @@ export function TradingPositionComponent() {
             <Button
               variant="outline"
               // size="sm"
-              className="bg-transparent text-xs rounded-full border-gray-700 text-white hover:bg-gray-200"
+              className="bg-transparent text-xs rounded-full border-[#2D3134] text-white hover:bg-gray-200"
             >
               GTC
               <ChevronDown className="w-3 h-3 ml-1" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-gray-800 border-gray-700">
+          <DropdownMenuContent className="bg-gray-800 border-[#2D3134]">
             <DropdownMenuItem className="text-gray-300 hover:bg-gray-700">
               GTC
             </DropdownMenuItem>
@@ -229,11 +229,11 @@ export function TradingPositionComponent() {
         <div className="space-y-1 mb-6">
           <div className="flex-1">
             <div className="flex justify-between items-center gap-2">
-              <div className="flex flex-1 justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+              <div className="flex flex-1 justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
                 <label className="text-custom-light text-xs">TP</label>
                 <span className="text-custom-light text-xs">USDC</span>
               </div>
-              <div className="flex w-2/6 justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+              <div className="flex w-2/6 justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
                 <span className="text-custom-light text-xs">Gain</span>
                 <span className="text-custom-light text-xs">%</span>
               </div>
@@ -242,11 +242,11 @@ export function TradingPositionComponent() {
 
           <div className="flex-1">
             <div className="flex gap-2 justify-between items-center mb-2">
-              <div className="flex flex-1 justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+              <div className="flex flex-1 justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
                 <label className="text-custom-light text-xs">SL</label>
                 <span className="text-custom-light text-xs">USDC</span>
               </div>
-              <div className="flex w-2/6 justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+              <div className="flex w-2/6 justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
                 <span className="text-custom-light text-xs">Loss</span>
                 <span className="text-custom-light text-xs">%</span>
               </div>
