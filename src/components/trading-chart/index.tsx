@@ -36,7 +36,7 @@ const tickerData = [
 
 export function TradingChart() {
   return (
-    <div className="flex-1 bg-foreground text-white min-h-[500px]">
+    <div className="flex-1 bg-foreground text-white md:min-h-[500px]">
       {/* Top Ticker Bar */}
       <div className="border-b border-gray-800 px-2 md:px-6 py-3">
         <div className="flex items-center space-x-8 text-[11px] overflow-x-auto pb-2 md:pb-[unset]">
@@ -58,7 +58,7 @@ export function TradingChart() {
         {/* Trading Pair Header */}
         <div className="mb-6">
           {/* Trading Stats */}
-          <div className="mt-2 flex items-center gap-6 2xl:gap-8 text-xs overflow-x-auto pb-2 md:pb-[unset]">
+          <div className="flex items-center gap-6 2xl:gap-8 text-xs overflow-x-auto pb-2 md:pb-[unset]">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button

@@ -47,9 +47,14 @@ export default function Home() {
       </div>
 
       {/* medium to small screen */}
-      <div className="md:hidden">{activeTab === "market" && <Market />}</div>
-      <div className="md:hidden">{activeTab === "trade" && <TradingPositionComponent />}</div>
-      <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+      <div className="md:hidden">
+        <TradingChart />
+        <div className="md:hidden">{activeTab === "market" && <Market />}</div>
+        <div className="md:hidden">
+          {activeTab === "trade" && <TradingPositionComponent />}
+        </div>
+        <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+      </div>
     </>
   );
 }
