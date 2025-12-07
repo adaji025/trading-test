@@ -14,6 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { RangeSlider } from "../range-slider";
 
 export function TradingPositionComponent() {
   const [orderType, setOrderType] = React.useState("Cross");
@@ -25,14 +26,14 @@ export function TradingPositionComponent() {
   const [reduceOnly, setReduceOnly] = React.useState(false);
 
   return (
-    <div className="w-full max-w-md bg-gray-950 text-white p-2 border border-gray-800">
+    <div className="w-full max-w-md bg-foreground text-white p-2 border border-gray-800">
       {/* Order Type Selectors */}
       <div className="flex space-x-2 mb-6">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="bg-gray-800 border-gray-700 text-white hover:bg-gray-700 flex-1"
+              className="rounded-full text-xs hover:text-white/90 bg-transparent border-gray-700 text-white hover:bg-gray-700 flex-1"
             >
               {orderType}
               <ChevronDown className="w-4 h-4 ml-2" />
@@ -58,7 +59,7 @@ export function TradingPositionComponent() {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="bg-gray-800 border-gray-700 text-white hover:bg-gray-700 flex-1 text-xs"
+              className="rounded-full hover:text-white/90 bg-transparent border-gray-700 text-white hover:bg-gray-700 flex-1 text-xs"
             >
               {leverage}
               <ChevronDown className="w-4 h-4 ml-2" />
@@ -66,25 +67,25 @@ export function TradingPositionComponent() {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-gray-800 border-gray-700">
             <DropdownMenuItem
-              className="text-gray-300 hover:bg-gray-700"
+              className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setLeverage("1x")}
             >
               1x
             </DropdownMenuItem>
             <DropdownMenuItem
-              className="text-gray-300 hover:bg-gray-700"
+              className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setLeverage("5x")}
             >
               5x
             </DropdownMenuItem>
             <DropdownMenuItem
-              className="text-gray-300 hover:bg-gray-700"
+              className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setLeverage("10x")}
             >
               10x
             </DropdownMenuItem>
             <DropdownMenuItem
-              className="text-gray-300 hover:bg-gray-700"
+              className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setLeverage("20x")}
             >
               20x
@@ -96,7 +97,7 @@ export function TradingPositionComponent() {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="bg-gray-800 border-gray-700 text-white hover:bg-gray-700 flex-1"
+              className="rounded-full hover:text-white/90 bg-transparent text-xs border-gray-700 text-white hover:bg-gray-700 flex-1"
             >
               {limitType}
               <ChevronDown className="w-4 h-4 ml-2" />
@@ -104,19 +105,19 @@ export function TradingPositionComponent() {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-gray-800 border-gray-700">
             <DropdownMenuItem
-              className="text-gray-300 hover:bg-gray-700"
+              className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setLimitType("Market")}
             >
               Market
             </DropdownMenuItem>
             <DropdownMenuItem
-              className="text-gray-300 hover:bg-gray-700"
+              className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setLimitType("Limit")}
             >
               Limit
             </DropdownMenuItem>
             <DropdownMenuItem
-              className="text-gray-300 hover:bg-gray-700"
+              className="text-gray-300 hover:bg-gray-700 text-xs"
               onClick={() => setLimitType("Stop")}
             >
               Stop
@@ -126,22 +127,22 @@ export function TradingPositionComponent() {
       </div>
 
       {/* Long/Short Toggle */}
-      <div className="flex space-x-2 mb-6">
+      <div className="flex space-x-2 mb-6 py-1 px-2 rounded-full bg-gray-800">
         <Button
-          className={`flex-1 ${
+          className={`flex-1 rounded-full text-xs cursor-pointer hover:scale-105 transition-all duration-300 ${
             isLong
               ? "bg-emerald-600 hover:bg-emerald-700"
-              : "bg-gray-800 hover:bg-gray-700"
-          } text-white`}
+              : "bg-transparent hover:bg-transparent"
+          }`}
           onClick={() => setIsLong(true)}
         >
           Long
         </Button>
         <Button
-          className={`flex-1 ${
+          className={`flex-1 rounded-full text-xs cursor-pointer hover:scale-105 transition-all duration-300 ${
             !isLong
-              ? "bg-red-600 hover:bg-red-700"
-              : "bg-gray-800 hover:bg-gray-700"
+              ? "bg-emerald-600 hover:bg-emerald-700"
+              : "bg-transparent hover:bg-transparent"
           } text-white`}
           onClick={() => setIsLong(false)}
         >
@@ -150,69 +151,49 @@ export function TradingPositionComponent() {
       </div>
 
       {/* Available Balance */}
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-gray-400 text-sm">Available</span>
-        <span className="text-white text-sm">2,455.43 USDC</span>
+      <div className="flex justify-between items-center mb-2 text-xs">
+        <span className="text-custom-light text-xs">Available</span>
+        <span className="text-white text-xs">2,455.43 USDC</span>
       </div>
 
-      <div className="flex justify-between items-center mb-6">
-        <span className="text-gray-400 text-sm">Current Position</span>
-        <span className="text-white text-sm">2,455.43 USDC</span>
+      <div className="flex justify-between items-center mb-6 text-xs">
+        <span className="text-custom-light">Current Position</span>
+        <span className="text-white">2,455.43 USDC</span>
       </div>
 
-      {/* Price Input */}
-      <div className="mb-4">
-        <div className="flex justify-between items-center mb-2">
-          <label className="text-gray-400 text-sm">Price</label>
-          <span className="text-gray-400 text-sm">USDC</span>
+      <div className="space-y-1">
+        {/* Price Input */}
+        <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+          <label className="text-custom-light text-xs">Price</label>
+          <span className="text-custom-light text-xs">USDC</span>
         </div>
-        <Input
-          type="number"
-          placeholder="0.00"
-          className="bg-gray-800 border-gray-700 text-white placeholder-gray-500"
-        />
-      </div>
-
-      {/* Size Input */}
-      <div className="mb-6">
-        <div className="flex justify-between items-center mb-2">
-          <label className="text-gray-400 text-sm">Size</label>
-          <span className="text-gray-400 text-sm">BTC</span>
+        {/* Size Input */}
+        <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+          <label className="text-custom-light text-xs">Size</label>
+          <span className="text-custom-light text-xs">BTC</span>
         </div>
-        <Input
-          type="number"
-          placeholder="0.00"
-          defaultValue="0.00"
-          className="bg-gray-800 border-gray-700 text-white placeholder-gray-500"
-        />
-        <div className="flex justify-between items-center mt-2">
-          <span className="text-gray-400 text-sm">0.00</span>
-          <span className="text-gray-400 text-sm">USDC</span>
+
+        <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+          <span className="text-custom-light text-xs">0.00</span>
+          <span className="text-custom-light text-xs">USDC</span>
         </div>
       </div>
 
       {/* Position Size Slider */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <Slider
+      <div className="my-6 px-2">
+        <div className="flex items-center gap-4 justify-between mb-4">
+          {/* <Slider
             value={positionSize}
             onValueChange={setPositionSize}
             max={100}
             step={25}
             className="flex-1 mr-4"
-          />
-          <Badge variant="outline" className="border-gray-600 text-white">
-            {positionSize[0]}%
-          </Badge>
-        </div>
+          /> */}
 
-        {/* Slider markers */}
-        <div className="flex justify-between text-xs text-gray-500 mb-4">
-          <span>0%</span>
-          <span>25%</span>
-          <span>50%</span>
-          <span>75%</span>
-          <span>100%</span>
+          <RangeSlider />
+          <Badge variant="outline" className="border-gray-600 text-white">
+            25%
+          </Badge>
         </div>
       </div>
 
@@ -224,7 +205,7 @@ export function TradingPositionComponent() {
             onCheckedChange={setTpSlEnabled}
             className="data-[state=checked]:bg-emerald-600"
           />
-          <span className="text-white text-sm">TP/SL</span>
+          <span className="text-white text-xs">TP/SL</span>
         </div>
 
         <div className="flex items-center space-x-2">
@@ -233,7 +214,7 @@ export function TradingPositionComponent() {
             onCheckedChange={setReduceOnly}
             className="data-[state=checked]:bg-emerald-600"
           />
-          <span className="text-white text-sm">Reduce</span>
+          <span className="text-white text-xs">Reduce</span>
         </div>
 
         <DropdownMenu>
@@ -267,11 +248,11 @@ export function TradingPositionComponent() {
           <div className="flex space-x-4">
             <div className="flex-1">
               <div className="flex justify-between items-center mb-2">
-                <label className="text-gray-400 text-sm">TP</label>
+                <label className="text-gray-400 text-xs">TP</label>
                 <div className="flex items-center space-x-2">
-                  <span className="text-gray-400 text-sm">USDC</span>
-                  <span className="text-gray-400 text-sm">Gain</span>
-                  <span className="text-gray-400 text-sm">%</span>
+                  <span className="text-gray-400 text-xs">USDC</span>
+                  <span className="text-gray-400 text-xs">Gain</span>
+                  <span className="text-gray-400 text-xs">%</span>
                 </div>
               </div>
               <Input
@@ -285,11 +266,11 @@ export function TradingPositionComponent() {
           <div className="flex space-x-4">
             <div className="flex-1">
               <div className="flex justify-between items-center mb-2">
-                <label className="text-gray-400 text-sm">SL</label>
+                <label className="text-gray-400 text-xs">SL</label>
                 <div className="flex items-center space-x-2">
-                  <span className="text-gray-400 text-sm">USDC</span>
-                  <span className="text-gray-400 text-sm">Loss</span>
-                  <span className="text-gray-400 text-sm">%</span>
+                  <span className="text-gray-400 text-xs">USDC</span>
+                  <span className="text-gray-400 text-xs">Loss</span>
+                  <span className="text-gray-400 text-xs">%</span>
                 </div>
               </div>
               <Input
@@ -308,7 +289,7 @@ export function TradingPositionComponent() {
       </Button>
 
       {/* Position Summary */}
-      <div className="space-y-2 text-sm">
+      <div className="space-y-2 text-xs">
         <div className="flex justify-between">
           <span className="text-gray-400">Liq. Price</span>
           <span className="text-white">$2,455.43</span>
