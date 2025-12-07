@@ -1,13 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDown } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Switch } from "@/components/ui/switch";
-import { Slider } from "@/components/ui/slider";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,9 +19,7 @@ export function TradingPositionComponent() {
   const [leverage, setLeverage] = React.useState("5x");
   const [limitType, setLimitType] = React.useState("Limit");
   const [isLong, setIsLong] = React.useState(true);
-  const [positionSize, setPositionSize] = React.useState([25]);
   const [tpSlEnabled, setTpSlEnabled] = React.useState(true);
-  const [reduceOnly, setReduceOnly] = React.useState(false);
 
   return (
     <div className="w-full max-w-md bg-foreground text-white p-2 border border-gray-800">
@@ -180,40 +176,27 @@ export function TradingPositionComponent() {
       </div>
 
       {/* Position Size Slider */}
-      <div className="my-6 px-2">
-        <div className="flex items-center gap-4 justify-between mb-4">
-          {/* <Slider
-            value={positionSize}
-            onValueChange={setPositionSize}
-            max={100}
-            step={25}
-            className="flex-1 mr-4"
-          /> */}
-
-          <RangeSlider />
-          <Badge variant="outline" className="border-gray-600 text-white">
-            25%
-          </Badge>
-        </div>
+      <div className="my-6 px-2 flex items-center gap-4 justify-between mb-4">
+        <RangeSlider />
+        <Badge
+          variant="outline"
+          className="border-gray-600 font-normal text-xs text-white px-2"
+        >
+          25 %
+        </Badge>
       </div>
 
       {/* TP/SL and Reduce Only */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-2">
-          <Switch
-            checked={tpSlEnabled}
-            onCheckedChange={setTpSlEnabled}
-            className="data-[state=checked]:bg-emerald-600"
-          />
+          <div className="h-4 w-4 rounded-full bg-custom-emerald flex items-center justify-center">
+            <Check className="w-3 h-3 text-foreground" />
+          </div>
           <span className="text-white text-xs">TP/SL</span>
         </div>
 
         <div className="flex items-center space-x-2">
-          <Switch
-            checked={reduceOnly}
-            onCheckedChange={setReduceOnly}
-            className="data-[state=checked]:bg-emerald-600"
-          />
+          <div className="flex w-3 h-3 border border-white rounded-full"></div>
           <span className="text-white text-xs">Reduce</span>
         </div>
 
@@ -221,8 +204,8 @@ export function TradingPositionComponent() {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              size="sm"
-              className="bg-gray-800 border-gray-700 text-white hover:bg-gray-700"
+              // size="sm"
+              className="bg-transparent text-xs rounded-full border-gray-700 text-white hover:bg-gray-200"
             >
               GTC
               <ChevronDown className="w-3 h-3 ml-1" />
@@ -244,66 +227,56 @@ export function TradingPositionComponent() {
 
       {/* TP/SL Inputs */}
       {tpSlEnabled && (
-        <div className="space-y-4 mb-6">
-          <div className="flex space-x-4">
-            <div className="flex-1">
-              <div className="flex justify-between items-center mb-2">
-                <label className="text-gray-400 text-xs">TP</label>
-                <div className="flex items-center space-x-2">
-                  <span className="text-gray-400 text-xs">USDC</span>
-                  <span className="text-gray-400 text-xs">Gain</span>
-                  <span className="text-gray-400 text-xs">%</span>
-                </div>
+        <div className="space-y-1 mb-6">
+          <div className="flex-1">
+            <div className="flex justify-between items-center gap-2">
+              <div className="flex flex-1 justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+                <label className="text-custom-light text-xs">TP</label>
+                <span className="text-custom-light text-xs">USDC</span>
               </div>
-              <Input
-                type="number"
-                placeholder="0.00"
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-500"
-              />
+              <div className="flex w-2/6 justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+                <span className="text-custom-light text-xs">Gain</span>
+                <span className="text-custom-light text-xs">%</span>
+              </div>
             </div>
           </div>
 
-          <div className="flex space-x-4">
-            <div className="flex-1">
-              <div className="flex justify-between items-center mb-2">
-                <label className="text-gray-400 text-xs">SL</label>
-                <div className="flex items-center space-x-2">
-                  <span className="text-gray-400 text-xs">USDC</span>
-                  <span className="text-gray-400 text-xs">Loss</span>
-                  <span className="text-gray-400 text-xs">%</span>
-                </div>
+          <div className="flex-1">
+            <div className="flex gap-2 justify-between items-center mb-2">
+              <div className="flex flex-1 justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+                <label className="text-custom-light text-xs">SL</label>
+                <span className="text-custom-light text-xs">USDC</span>
               </div>
-              <Input
-                type="number"
-                placeholder="0.00"
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-500"
-              />
+              <div className="flex w-2/6 justify-between items-center mb-2 bg-[#1A1D1F] border-gray-700 rounded-md py-3 px-2">
+                <span className="text-custom-light text-xs">Loss</span>
+                <span className="text-custom-light text-xs">%</span>
+              </div>
             </div>
           </div>
         </div>
       )}
 
       {/* Connect Button */}
-      <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 mb-6">
+      <Button className="w-full rounded-full bg-emerald-600 hover:bg-emerald-700 text-foreground cursor-pointer font-semibold py-3 mb-6">
         Connect
       </Button>
 
       {/* Position Summary */}
-      <div className="space-y-2 text-xs">
+      <div className="space-y-2 text-xs border rounded-2xl p-3 border-[#1A1D1F]">
         <div className="flex justify-between">
-          <span className="text-gray-400">Liq. Price</span>
+          <span className="text-custom-light">Liq. Price</span>
           <span className="text-white">$2,455.43</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-gray-400">Est. Value</span>
+          <span className="text-custom-light">Est. Value</span>
           <span className="text-white">$2,455.43</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-gray-400">Margin</span>
+          <span className="text-custom-light">Margin</span>
           <span className="text-white">$2,455.43</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-gray-400">Fees</span>
+          <span className="text-custom-light">Fees</span>
           <span className="text-white">$2,455.43</span>
         </div>
       </div>

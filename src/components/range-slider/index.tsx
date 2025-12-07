@@ -5,7 +5,7 @@ import type React from "react";
 import { useState, useRef } from "react";
 
 export function RangeSlider() {
-  const [minValue, setMinValue] = useState(25);
+  const [minValue, setMinValue] = useState(0);
   const [maxValue, setMaxValue] = useState(75);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -20,29 +20,48 @@ export function RangeSlider() {
       >
         {/* Track background */}
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full h-1 bg-slate-700 rounded-full" />
+          <div className="w-full h-0.5 bg-[#878787] rounded-full" />
         </div>
 
-        {/* Filled track */}
-        <div
-          className="absolute"
-          style={{
-            left: `${minValue}%`,
-            right: `${100 - maxValue}%`,
-          }}
-        />
+        {/* Filled track - Active portion with green background */}
+        <div className="absolute inset-0 flex items-center">
+          <div
+            className="h-0.5 bg-custom-emerald rounded-full"
+            style={{
+              width: `${25}%`,
+              left: `${minValue}%`,
+            }}
+          />
+        </div>
 
         {/* Markers/Nodes */}
         <div className="absolute inset-0 flex items-center">
-          {markers.map((marker) => (
-            <div
-              key={marker}
-              className="absolute w-2.5 h-2.5 bg-white rounded-full transform -translate-x-1/2"
-              style={{
-                left: `${marker}%`,
-              }}
-            />
-          ))}
+          {markers.map((marker) => {
+            const activeValue = 25; // The active range is from 0 to this value
+            const isActive = marker <= activeValue;
+            const isActiveBoundary = marker === activeValue;
+            
+            return (
+              <div
+                key={marker}
+                className={`absolute rounded-full transform -translate-x-1/2 ${
+                  isActiveBoundary
+                    ? "w-3 h-3"
+                    : "w-2 h-2"
+                } ${
+                  isActive
+                    ? "bg-custom-emerald"
+                    : "bg-foreground border-2 border-custom-emerald"
+                }`}
+                style={{
+                  left: `${marker}%`,
+                  ...(isActiveBoundary && {
+                    border: "2px solid #1F1F1FCC",
+                  }),
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
