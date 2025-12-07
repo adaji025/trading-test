@@ -52,7 +52,7 @@ export function BottomNavigation({ activeTab, setActiveTab }: IProps) {
             >
               <div
                 className={`w-5 h-5 ${
-                  isActive ? "text-custom-emerald" : "text-gray-400"
+                  isActive ? "text-custom-emerald" : "text-custom-light"
                 }`}
               >
                 {item.icon}
@@ -60,7 +60,7 @@ export function BottomNavigation({ activeTab, setActiveTab }: IProps) {
 
               <span
                 className={`text-xs font-medium ${
-                  isActive ? "text-custom-emerald" : "text-gray-400"
+                  isActive ? "text-custom-emerald" : "text-custom-light"
                 }`}
               >
                 {item.label}

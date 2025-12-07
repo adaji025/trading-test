@@ -12,7 +12,7 @@ export function AccountEquityComponent() {
       <div className="flex mt-2 items-center gap-2 justify-end xl:justify-between border-gray-800">
         <div className="flex px-2 py-2 justify-center bg-[#1A1D1F] rounded-full xl:flex-1 items-center space-x-2">
           <div className="text-custom-emerald  text-xs">Perps</div>
-          <ArrowLeftRight className="w-4 h-4 text-gray-400" />
+          <ArrowLeftRight className="w-4 h-4 text-custom-light" />
           <div className="text-custom-light text-xs">Spot</div>
         </div>
 
@@ -29,11 +29,11 @@ export function AccountEquityComponent() {
 
         <div className="space-y-1">
           <div className="flex justify-between text-xs">
-            <div className="text-gray-400">Spot</div>
+            <div className="text-custom-light">Spot</div>
             <div className="text-white font-bold">$2,455.43</div>
           </div>
           <div className="flex justify-between text-xs">
-            <div className="text-gray-400">Perps</div>
+            <div className="text-custom-light">Perps</div>
             <div className="text-white font-bold">$2,455.43</div>
           </div>
         </div>
@@ -46,27 +46,27 @@ export function AccountEquityComponent() {
 
           <div className="grid grid-cols-1 gap-1 text-xs">
             <div className="flex justify-between items-center">
-              <span className="text-gray-400">Balance</span>
+              <span className="text-custom-light">Balance</span>
               <span className="text-white font-medium">$2,455.43</span>
             </div>
 
             <div className="flex justify-between items-center">
-              <span className="text-gray-400">Unrealized PnL</span>
+              <span className="text-custom-light">Unrealized PnL</span>
               <span className="text-white font-medium">$2,455.43</span>
             </div>
 
             <div className="flex justify-between items-center">
-              <span className="text-gray-400">Cross Margin Ratio</span>
+              <span className="text-custom-light">Cross Margin Ratio</span>
               <span className="text-white font-medium">$2,455.43</span>
             </div>
 
             <div className="flex justify-between items-center">
-              <span className="text-gray-400">Maintenance Margin</span>
+              <span className="text-custom-light">Maintenance Margin</span>
               <span className="text-white font-medium">$2,455.43</span>
             </div>
 
             <div className="flex justify-between items-center">
-              <span className="text-gray-400">Cross Account Leverage</span>
+              <span className="text-custom-light">Cross Account Leverage</span>
               <span className="text-white font-medium">$2,455.43</span>
             </div>
           </div>

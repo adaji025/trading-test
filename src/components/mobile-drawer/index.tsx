@@ -64,7 +64,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               variant="ghost"
               size="icon"
               onClick={onClose}
-              className="text-gray-400 hover:text-white hover:bg-gray-800"
+              className="text-custom-light hover:text-white hover:bg-gray-800"
             >
               <X className="w-5 h-5" />
             </Button>

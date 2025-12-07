@@ -72,7 +72,7 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="text-gray-400 hover:text-gray-300 hover:bg-gray-800"
+                  className="text-custom-light hover:text-gray-300 hover:bg-gray-800"
                 >
                   <div className="flex items-center space-x-1">
                     <span className="text-xs">Markets</span>
@@ -105,7 +105,7 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="text-gray-400 hover:text-gray-300 hover:bg-gray-800"
+                  className="text-custom-light hover:text-gray-300 hover:bg-gray-800"
                 >
                   <div className="flex items-center space-x-1">
                     <div className="w-4 h-4 bg-emerald-400 rounded-full flex items-center justify-center">

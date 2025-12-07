@@ -64,7 +64,7 @@ export function OrderBookComponent() {
           <div className="p-2 flex gap-2 md:gap-[unset] flex-row md:flex-col">
             {/* Order Book Header */}
             <div className="flex-1">
-              <div className="grid grid-cols-2 md:grid-cols-3 mb-4 w-full text-xs text-gray-400 font-medium">
+              <div className="grid grid-cols-2 md:grid-cols-3 mb-4 w-full text-xs text-custom-light font-medium">
                 <span>Price</span>
                 <span className="text-center hidden md:inline">Amount</span>
                 <span className="text-right">Qty</span>
@@ -110,15 +110,15 @@ export function OrderBookComponent() {
             <div className="flex-1">
               {/* Spread */}
               <div className="hidden md:flex justify-between items-center py-2 border-y border-gray-800 mb-4">
-                <span className="text-gray-400 text-xs">Spread</span>
+                <span className="text-custom-light text-xs">Spread</span>
                 <span className="text-gray-300 text-xs hidden md:inline">
                   1
                 </span>
-                <span className="text-gray-400 text-xs">0.00%</span>
+                <span className="text-custom-light text-xs">0.00%</span>
               </div>
 
               {/* Buy Orders (Green) */}
-              <div className="md:hidden grid grid-cols-2 md:grid-cols-3 mb-4 w-full text-xs text-gray-400 font-medium">
+              <div className="md:hidden grid grid-cols-2 md:grid-cols-3 mb-4 w-full text-xs text-custom-light font-medium">
                 <span>Price</span>
                 <span className="text-center hidden md:inline">Amount</span>
                 <span className="text-right">Qty</span>
@@ -204,7 +204,7 @@ export function OrderBookComponent() {
         <TabsContent value="trades" className="mt-0">
           <div className="p-2">
             {/* Trades Header */}
-            <div className="grid grid-cols-3 w-full text-xs text-gray-400 font-medium mb-4">
+            <div className="grid grid-cols-3 w-full text-xs text-custom-light font-medium mb-4">
               <span>Price</span>
               <span className="text-center">Size</span>
               <span className="text-right">Time</span>
@@ -225,7 +225,7 @@ export function OrderBookComponent() {
                     120,784.33
                   </span>
                   <span className="text-gray-300 text-center">0.23</span>
-                  <span className="text-gray-400 text-right">12:34:56</span>
+                  <span className="text-custom-light text-right">12:34:56</span>
                 </div>
               ))}
             </div>

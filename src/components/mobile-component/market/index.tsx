@@ -40,7 +40,7 @@ const Market = () => {
 
         <TabsContent value="trades" className="mt-0">
           <div className="p-4">
-            <p className="text-gray-400">Order Book content goes here</p>
+            <p className="text-custom-light">Order Book content goes here</p>
           </div>
         </TabsContent>
       </Tabs>

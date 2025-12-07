@@ -22,7 +22,7 @@ export default function TradingSummaryParent() {
   return (
     <div className="min-h-[200px] text-slate-100 md:border-t border-[#2D3134]">
       {/* Header */}
-      <div className="border-b border-[#2D3134] py-1.5">
+      <div className="border-b border-[#2D3134]">
         <div className="px-2">
           <div className="flex items-center justify-between">
             {/* Tabs */}
@@ -31,10 +31,10 @@ export default function TradingSummaryParent() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-4 py-2 text-xs whitespace-nowrap border-b-2 transition-all ${
+                  className={`px-4 py-3 text-xs whitespace-nowrap border-b-2 transition-all ${
                     activeTab === tab.id
-                      ? "border-cyan-400 text-cyan-400"
-                      : "border-transparent text-slate-400 hover:text-slate-300"
+                      ? "border-custom-emerald text-white"
+                      : "border-transparent text-custom-light hover:text-slate-300"
                   }`}
                 >
                   {tab.label}
@@ -67,7 +67,7 @@ export default function TradingSummaryParent() {
       <div className="">
         {activeTab === "balances" && <PositionsTable hideSmallBalances={hideSmallBalances} />}
         {activeTab !== "balances" && (
-          <div className="text-slate-400 text-sm py-8 px-2 md:text-center">{tabs.find((t) => t.id === activeTab)?.label} tab content</div>
+          <div className="text-custom-light text-sm py-8 px-2 md:text-center">{tabs.find((t) => t.id === activeTab)?.label} tab content</div>
         )}
       </div>
     </div>
