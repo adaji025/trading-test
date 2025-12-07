@@ -61,17 +61,17 @@ export function OrderBookComponent() {
         </TabsList>
 
         <TabsContent value="orderbook" className="mt-0">
-          <div className="p-2 flex gap-2 md:gap-[unset] flex-row md:flex-col">
+          <div className="flex gap-2 md:gap-[unset] flex-row md:flex-col">
             {/* Order Book Header */}
             <div className="flex-1">
-              <div className="grid grid-cols-2 md:grid-cols-3 mb-4 w-full text-xs text-custom-light font-medium">
+              <div className="px-2 grid grid-cols-2 md:grid-cols-3 mb-4 w-full text-xs text-custom-light font-medium">
                 <span>Price</span>
                 <span className="text-center hidden md:inline">Amount</span>
                 <span className="text-right">Qty</span>
               </div>
 
               {/* Sell Orders (Red) */}
-              <div className="mb-4">
+              <div className="mb-4 px-2">
                 {sellOrders.map((order, index) => {
                   // Stepped width pattern: first 2 biggest, then 3 smaller, then 2 smaller, then 4 smaller, last smallest
                   const getWidth = (idx: number) => {
@@ -109,7 +109,7 @@ export function OrderBookComponent() {
 
             <div className="flex-1">
               {/* Spread */}
-              <div className="hidden md:flex justify-between items-center py-2 border-y border-gray-800 mb-4">
+              <div className="px-2 hidden md:flex justify-between items-center py-2 bg-[#1A1D1F] mb-4">
                 <span className="text-custom-light text-xs">Spread</span>
                 <span className="text-gray-300 text-xs hidden md:inline">
                   1
@@ -118,12 +118,12 @@ export function OrderBookComponent() {
               </div>
 
               {/* Buy Orders (Green) */}
-              <div className="md:hidden grid grid-cols-2 md:grid-cols-3 mb-4 w-full text-xs text-custom-light font-medium">
+              <div className="px-2 md:hidden grid grid-cols-2 md:grid-cols-3 mb-4 w-full text-xs text-custom-light font-medium">
                 <span>Price</span>
                 <span className="text-center hidden md:inline">Amount</span>
                 <span className="text-right">Qty</span>
               </div>
-              <div className="">
+              <div className="px-2">
                 {buyOrders.map((order, index) => {
                   // Reversed stepped width pattern: last items biggest, first items smallest
                   const getWidth = (idx: number) => {

@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -56,9 +57,9 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full pb-10">
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-800">
+          <div className="flex items-center justify-between px-4 py-2 border-b border-gray-800">
             <h2 className="text-lg font-semibold text-white">Menu</h2>
             <Button
               variant="ghost"
@@ -77,7 +78,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               {navItems.map((item) => (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={"#"}
                   onClick={onClose}
                   className={`block px-4 py-3 rounded-lg text-sm transition-colors ${
                     item.active
@@ -97,7 +98,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                 {marketItems.map((item) => (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={"#"}
                     onClick={onClose}
                     className="block px-4 py-3 rounded-lg text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
                   >
@@ -119,9 +120,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                     className="block px-4 py-3 rounded-lg text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
                   >
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-emerald-400 rounded-full flex items-center justify-center">
-                        <span className="text-xs text-gray-900 font-bold">$</span>
-                      </div>
+                      <Image src={"/b.svg"} height={24} width={24} alt="b" />
                       <span>{item.label}</span>
                     </div>
                   </Link>
@@ -134,4 +133,3 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
     </>
   );
 }
-
