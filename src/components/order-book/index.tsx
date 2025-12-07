@@ -43,7 +43,7 @@ const buyOrders = [
 
 export function OrderBookComponent() {
   return (
-    <div className="w-full bg-foreground h-full border-l border-gray-800 text-white">
+    <div className="w-full border-t xl:border-none bg-foreground h-full border-l border-gray-800 text-white">
       <Tabs defaultValue="orderbook" className="w-full py-[11px]">
         <TabsList className="grid w-full grid-cols-2 rounded-none bg-foreground border-b border-gray-800 py-0">
           <TabsTrigger
@@ -72,28 +72,39 @@ export function OrderBookComponent() {
             </div>
 
             {/* Sell Orders (Red) */}
-            <div className="space-y-1 mb-4">
-              {sellOrders.map((order, index) => (
+            <div className="mb-4">
+              {sellOrders.map((order, index) => {
+                // Stepped width pattern: first 2 biggest, then 3 smaller, then 2 smaller, then 4 smaller, last smallest
+                const getWidth = (idx: number) => {
+                  if (idx < 2) return 90; // First 2: biggest
+                  if (idx < 5) return 75; // Next 3: smaller
+                  if (idx < 7) return 60; // Next 2: even smaller
+                  if (idx < 11) return 55; // Next 4: smaller still
+                  return 50; // Last 1: smallest
+                };
+
+                return (
                 <div
                   key={`sell-${index}`}
-                  className="grid grid-cols-3 text-xs py-1 hover:bg-red-950/20 cursor-pointer relative"
+                  className="grid grid-cols-3 text-xs relative"
                 >
-                  {/* Background bar for visualization */}
-                  <div
-                    className="absolute right-0 top-0 h-full bg-red-900/20"
-                    style={{ width: `${Math.random() * 60 + 20}%` }}
-                  />
                   <span className="text-red-400 relative z-10">
                     {order.price}
                   </span>
                   <span className="text-gray-300 text-center relative z-10">
                     {order.amount}
                   </span>
-                  <span className="text-gray-300 text-right relative z-10">
-                    {order.qty}
+                  <span className="text-gray-300 text-right relative z-10 py-1">
+                    {/* Background bar for visualization - only on Qty column */}
+                    <div
+                      className="absolute right-0 top-0 h-full bg-red-900/20"
+                      style={{ width: `${getWidth(index)}%` }}
+                    />
+                    <span className="relative z-10">{order.qty}</span>
                   </span>
                 </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Spread */}
@@ -104,28 +115,41 @@ export function OrderBookComponent() {
             </div>
 
             {/* Buy Orders (Green) */}
-            <div className="space-y-1">
-              {buyOrders.map((order, index) => (
+            <div className="">
+              {buyOrders.map((order, index) => {
+                // Reversed stepped width pattern: last items biggest, first items smallest
+                const getWidth = (idx: number) => {
+                  const totalItems = buyOrders.length;
+                  const reversedIdx = totalItems - 1 - idx; // Reverse the index
+                  if (reversedIdx < 2) return 90; // Last 2: biggest
+                  if (reversedIdx < 5) return 75; // Next 3: smaller
+                  if (reversedIdx < 7) return 60; // Next 2: even smaller
+                  if (reversedIdx < 11) return 55; // Next 4: smaller still
+                  return 50; // First 1: smallest
+                };
+
+                return (
                 <div
                   key={`buy-${index}`}
-                  className="grid grid-cols-3 text-xs py-1 hover:bg-emerald-950/20 cursor-pointer relative"
+                  className="grid grid-cols-3 text-xs hover:bg-emerald-950/20 cursor-pointer relative"
                 >
-                  {/* Background bar for visualization */}
-                  <div
-                    className="absolute right-0 top-0 h-full bg-emerald-900/20"
-                    style={{ width: `${Math.random() * 60 + 20}%` }}
-                  />
                   <span className="text-emerald-400 relative z-10">
                     {order.price}
                   </span>
                   <span className="text-gray-300 text-center relative z-10">
                     {order.amount}
                   </span>
-                  <span className="text-gray-300 text-right relative z-10">
-                    {order.qty}
+                  <span className="text-gray-300 text-right relative z-10 py-1">
+                    {/* Background bar for visualization - only on Qty column */}
+                    <div
+                      className="absolute right-0 top-0 h-full bg-emerald-900/20"
+                      style={{ width: `${getWidth(index)}%` }}
+                    />
+                    <span className="relative z-10">{order.qty}</span>
                   </span>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

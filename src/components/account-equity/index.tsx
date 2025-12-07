@@ -2,23 +2,21 @@
 
 import { ArrowLeftRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-
 export function AccountEquityComponent() {
   return (
     <div className="w-full text-white border-t px-2 border-l border-gray-700">
       {/* Top Navigation */}
-      <div className="text-white text-xs text-center bg-[#1A1D1F] rounded-full mt-2 hover:bg-gray-700 px-2 py-2">
+      <div className="text-white w-fit xl:w-full text-xs text-center bg-[#1A1D1F] rounded-full mt-2 hover:bg-gray-700 px-2 py-2">
         Deposit
       </div>
-      <div className="flex mt-2 items-center gap-2 justify-between border-gray-800">
-        <div className="flex px-2 py-2 justify-center bg-[#1A1D1F] rounded-full flex-1 items-center space-x-2">
+      <div className="flex mt-2 items-center gap-2 justify-end xl:justify-between border-gray-800">
+        <div className="flex px-2 py-2 justify-center bg-[#1A1D1F] rounded-full xl:flex-1 items-center space-x-2">
           <div className="text-custom-emerald  text-xs">Perps</div>
           <ArrowLeftRight className="w-4 h-4 text-gray-400" />
           <div className="text-custom-light text-xs">Spot</div>
         </div>
 
-        <div className="flex-1 text-xs text-custom-light bg-[#1A1D1F] text-center p-2 rounded-full hover:bg-gray-800 px-0">
+        <div className="xl:flex-1 text-xs text-custom-light bg-[#1A1D1F] text-center p-2 rounded-full hover:bg-gray-700">
           Withdraw
         </div>
       </div>
@@ -68,9 +66,7 @@ export function AccountEquityComponent() {
             </div>
 
             <div className="flex justify-between items-center">
-              <span className="text-gray-400">
-                Cross Account Leverage
-              </span>
+              <span className="text-gray-400">Cross Account Leverage</span>
               <span className="text-white font-medium">$2,455.43</span>
             </div>
           </div>

@@ -22,7 +22,7 @@ export function TradingPositionComponent() {
   const [tpSlEnabled, setTpSlEnabled] = React.useState(true);
 
   return (
-    <div className="w-full max-w-md bg-foreground text-white p-2 border border-gray-800">
+    <div className="w-full h-full border-t xl:border-none max-w-md bg-foreground text-white p-2 border-r border-l border-gray-800">
       {/* Order Type Selectors */}
       <div className="flex space-x-2 mb-6">
         <DropdownMenu>
