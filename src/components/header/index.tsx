@@ -43,7 +43,7 @@ export function Header() {
             <NavigationMenu>
               <NavigationMenuList className="space-x-8">
                 <NavigationMenuItem>
-                  <Link href="/perps" legacyBehavior passHref>
+                  <Link href="#" legacyBehavior passHref>
                     <NavigationMenuLink className="text-xs text-emerald-400 font-medium hover:bg-custom-emerald hover:text-white transition-colors">
                       Perps
                     </NavigationMenuLink>
@@ -51,7 +51,7 @@ export function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/spots" legacyBehavior passHref>
+                  <Link href="#" legacyBehavior passHref>
                     <NavigationMenuLink className="text-xs text-custom-light hover:bg-custom-emerald hover:text-white transition-colors">
                       Spots
                     </NavigationMenuLink>
@@ -59,7 +59,7 @@ export function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/portfolio" legacyBehavior passHref>
+                  <Link href="#" legacyBehavior passHref>
                     <NavigationMenuLink className="text-xs text-custom-light hover:bg-custom-emerald hover:text-white transition-colors">
                       Portfolio
                     </NavigationMenuLink>
@@ -84,7 +84,7 @@ export function Header() {
               <DropdownMenuContent className="bg-gray-800 border-[#2D3134]">
                 <DropdownMenuItem asChild>
                   <Link
-                    href="/markets/crypto"
+                    href="#"
                     className="text-custom-light hover:bg-gray-700 text-xs"
                   >
                     Crypto Markets
@@ -92,7 +92,7 @@ export function Header() {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link
-                    href="/markets/forex"
+                    href="#"
                     className="text-custom-light hover:bg-gray-700 text-xs"
                   >
                     Forex Markets
@@ -140,12 +140,12 @@ export function Header() {
           {/* Language/Region */}
 
           <div className="md:block text-white cursor-pointer">
-            <Globe className="w-5 h-5" />
+            <Globe className="w-4 h-4" />
           </div>
 
           {/* Settings */}
           <div className="text-white cursor-pointer">
-            <Settings className="w-5 h-5" />
+            <Settings className="w-4 h-4" />
           </div>
 
           <Button

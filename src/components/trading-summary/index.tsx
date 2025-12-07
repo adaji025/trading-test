@@ -54,8 +54,9 @@ export default function TradingSummaryParent() {
                   type="checkbox"
                   checked={hideSmallBalances}
                   onChange={(e) => setHideSmallBalances(e.target.checked)}
-                  className="w-4 h-4 accent-cyan- text-xs"
+                  className="w-4 h-4 accent-cyan- text-xs rounded-full"
                 />
+                
                 <span className="text-xs">Hide small balances</span>
               </label>
             </div>
