@@ -43,7 +43,7 @@ export default function TradingSummaryParent() {
             </div>
 
             {/* Controls */}
-            <div className="flex items-center gap-4 ml-8">
+            <div className="hidden md:flex items-center gap-4 ml-8">
               <div className="flex items-center gap-2">
                 <button className="px-3 py-1.5 text-xs rounded-full border border-slate-600 hover:border-slate-500 hover:bg-slate-800 transition-colors flex items-center gap-2">
                   Filter <ChevronDown size={16} />
@@ -67,7 +67,7 @@ export default function TradingSummaryParent() {
       <div className="">
         {activeTab === "balances" && <PositionsTable hideSmallBalances={hideSmallBalances} />}
         {activeTab !== "balances" && (
-          <div className="text-slate-400 text-sm py-8 px-2 text-center">{tabs.find((t) => t.id === activeTab)?.label} tab content</div>
+          <div className="text-slate-400 text-sm py-8 px-2 md:text-center">{tabs.find((t) => t.id === activeTab)?.label} tab content</div>
         )}
       </div>
     </div>

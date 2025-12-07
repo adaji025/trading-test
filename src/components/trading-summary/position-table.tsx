@@ -38,7 +38,7 @@ export default function PositionsTable({
         <thead>
           <tr className="border-b border-slate-700 text-slate-400 text-xs font-medium">
             {columns.map((column) => (
-              <th key={column.key} className="px-6 py-4 text-left font-medium text-slate-300">
+              <th key={column.key} className="px-6 text-nowrap py-4 text-left font-medium text-slate-300">
                 {column.label}
               </th>
             ))}
@@ -53,16 +53,16 @@ export default function PositionsTable({
             </tr>
           ) : (
             positions.map((position, index) => (
-              <tr key={index} className="border-b border-slate-800 hover:bg-slate-900/30 transition-colors">
-                <td className="px-6 py-4 text-sm font-medium text-slate-100">{position.coin}</td>
-                <td className="px-6 py-4 text-sm text-slate-300">{position.size}</td>
-                <td className="px-6 py-4 text-sm text-slate-300">{position.positionValue}</td>
-                <td className="px-6 py-4 text-sm text-slate-300">{position.entryPrice}</td>
-                <td className="px-6 py-4 text-sm text-slate-300">{position.markPrice}</td>
-                <td className="px-6 py-4 text-sm text-slate-300">{position.pnl}</td>
-                <td className="px-6 py-4 text-sm text-slate-300">{position.liqPrice}</td>
-                <td className="px-6 py-4 text-sm text-slate-300">{position.margin}</td>
-                <td className="px-6 py-4 text-sm text-slate-300">{position.funding}</td>
+              <tr key={index} className="border-b text-nowrap border-slate-800 hover:bg-slate-900/30 transition-colors">
+                <td className="px-6 text-nowrap! py-4 text-sm font-medium text-slate-100">{position.coin}</td>
+                <td className="px-6 text-nowrap! py-4 text-sm text-slate-300">{position.size}</td>
+                <td className="px-6 text-nowrap! py-4 text-sm text-slate-300">{position.positionValue}</td>
+                <td className="px-6 text-nowrap! py-4 text-sm text-slate-300">{position.entryPrice}</td>
+                <td className="px-6 text-nowrap! py-4 text-sm text-slate-300">{position.markPrice}</td>
+                <td className="px-6 text-nowrap! py-4 text-sm text-slate-300">{position.pnl}</td>
+                <td className="px-6 text-nowrap! py-4 text-sm text-slate-300">{position.liqPrice}</td>
+                <td className="px-6 text-nowrap! py-4 text-sm text-slate-300">{position.margin}</td>
+                <td className="px-6 text-nowrap! py-4 text-sm text-slate-300">{position.funding}</td>
               </tr>
             ))
           )}

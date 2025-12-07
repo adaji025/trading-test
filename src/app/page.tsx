@@ -1,12 +1,18 @@
+"use client";
+import React from "react";
 import { AccountEquityComponent } from "@/components/account-equity";
 import { BottomNavigation } from "@/components/bottom-navigation";
 import { Header } from "@/components/header";
+import Market from "@/components/mobile-component/market";
 import { OrderBookComponent } from "@/components/order-book";
-import { TradingPanel } from "@/components/trading-panel";
+import { TradingChart } from "@/components/trading-chart";
 import { TradingPositionComponent } from "@/components/trading-position";
 import TradingSummaryParent from "@/components/trading-summary";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = React.useState<
+    "market" | "trade" | "portfolio"
+  >("market");
   return (
     <>
       <Header />
@@ -14,7 +20,7 @@ export default function Home() {
       <div className="pb-20 md:pb-20 xl:pb-0 hidden md:block">
         <div className="flex flex-col xl:flex-row">
           <div className="flex-1 flex">
-            <TradingPanel />
+            <TradingChart />
             <div className="max-w-[288px] w-full hidden xl:block">
               <OrderBookComponent />
             </div>
@@ -41,7 +47,9 @@ export default function Home() {
       </div>
 
       {/* medium to small screen */}
-      <BottomNavigation />
+      <div className="md:hidden">{activeTab === "market" && <Market />}</div>
+      <div className="md:hidden">{activeTab === "trade" && <TradingPositionComponent />}</div>
+      <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
     </>
   );
 }
