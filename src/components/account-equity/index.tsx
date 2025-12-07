@@ -6,7 +6,7 @@ export function AccountEquityComponent() {
   return (
     <div className="w-full text-white border-t px-2 border-l border-[#2D3134]">
       {/* Top Navigation */}
-      <div className="text-white w-fit xl:w-full text-xs text-center bg-[#1A1D1F] rounded-full mt-2 hover:bg-gray-700 px-2 py-2">
+      <div className="text-white w-fit xl:w-full text-xs text-center bg-[#1A1D1F] rounded-full mt-4 hover:bg-gray-700 px-2 py-2">
         Deposit
       </div>
       <div className="flex mt-2 items-center gap-2 justify-end xl:justify-between border-gray-800">

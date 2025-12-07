@@ -54,9 +54,20 @@ export default function TradingSummaryParent() {
                   type="checkbox"
                   checked={hideSmallBalances}
                   onChange={(e) => setHideSmallBalances(e.target.checked)}
-                  className="w-4 h-4 accent-cyan- text-xs rounded-full"
+                  className="sr-only"
+                  aria-label="Hide small balances"
                 />
-                
+                <div
+                  className={`w-4 h-4 rounded-full border-2 transition-colors flex items-center justify-center ${
+                    hideSmallBalances
+                      ? "bg-emerald-400 border-emerald-400"
+                      : "border-white"
+                  }`}
+                >
+                  {hideSmallBalances && (
+                    <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                  )}
+                </div>
                 <span className="text-xs">Hide small balances</span>
               </label>
             </div>

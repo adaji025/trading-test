@@ -141,7 +141,7 @@ export function OrderBookComponent() {
                       key={`buy-${index}`}
                       className="grid grid-cols-2 md:grid-cols-3 text-xs hover:bg-emerald-950/20 cursor-pointer relative"
                     >
-                      <span className="text-emerald-400 relative z-10">
+                      <span className="text-custom-emerald relative z-10">
                         {order.price}
                       </span>
                       <span className="text-gray-300 text-center relative z-10 hidden md:inline">
@@ -150,7 +150,7 @@ export function OrderBookComponent() {
                       <span className="text-gray-300 text-right relative z-10 py-1">
                         {/* Background bar for visualization - only on Qty column */}
                         <div
-                          className="absolute right-0 top-0 h-full bg-emerald-900/20"
+                          className="absolute right-0 top-0 h-full bg-[#02DA8B33]"
                           style={{ width: `${getWidth(index)}%` }}
                         />
                         <span className="relative z-10">{order.qty}</span>

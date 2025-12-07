@@ -86,7 +86,7 @@ export function TradingChart() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <div>
+            <div className="space-y-0.5">
               <div className="text-[#A9A9A9] underline hidden md:block">
                 Mark / Oracle
               </div>
@@ -94,30 +94,26 @@ export function TradingChart() {
                 3,699.0 / 3,700.6
               </div>
             </div>
-            <div>
-              <div className="text-[#A9A9A9] underline hidden md:block">
-                24h Change
-              </div>
+            <div className="space-y-0.5">
+              <div className="text-[#A9A9A9] hidden md:block">24h Change</div>
               <div className="text-emerald-400 font-medium text-nowrap">
                 +2,129.7 +1.81%
               </div>
             </div>
-            <div>
-              <div className="text-[#A9A9A9] underline hidden md:block">
-                24h Volume
-              </div>
+            <div className="space-y-0.5">
+              <div className="text-[#A9A9A9] hidden md:block">24h Volume</div>
               <div className="text-white font-medium text-nowrap">
                 $3,503,919,357.29
               </div>
             </div>
-            <div>
-              <div className="text-[#A9A9A9] underline hidden md:block">
+            <div className="space-y-0.5">
+              <div className="text-[#A9A9A9] hidden md:block">
                 Open Interest
               </div>
               <div className="text-white font-medium text-nowrap">$2.03T</div>
             </div>
-            <div>
-              <div className="text-[#A9A9A9] underline hidden md:block">
+            <div className="space-y-0.5">
+              <div className="text-[#A9A9A9] hidden md:block">
                 Funding/Countdown
               </div>
               <div className="text-white font-medium text-nowrap">
