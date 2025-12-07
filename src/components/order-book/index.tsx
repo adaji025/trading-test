@@ -43,7 +43,7 @@ const buyOrders = [
 
 export function OrderBookComponent() {
   return (
-    <div className="w-full md:border-t xl:border-none bg-foreground h-full border-l border-gray-800 text-white">
+    <div className="w-full md:border-t bg-foreground h-full md:border-l border-[#2D3134] text-white">
       <Tabs defaultValue="orderbook" className="w-full py-[11px]">
         <TabsList className="hidden md:grid w-full grid-cols-2 rounded-none bg-foreground border-b border-gray-800 py-0">
           <TabsTrigger
@@ -87,7 +87,7 @@ export function OrderBookComponent() {
                       key={`sell-${index}`}
                       className="grid grid-cols-2 md:grid-cols-3 text-xs relative"
                     >
-                      <span className="text-red-400 relative z-10">
+                      <span className="text-[#FF4D4F] relative z-10">
                         {order.price}
                       </span>
                       <span className="text-gray-300 text-center relative z-10 hidden md:inline">
@@ -96,7 +96,7 @@ export function OrderBookComponent() {
                       <span className="text-gray-300 text-right relative z-10 py-1">
                         {/* Background bar for visualization - only on Qty column */}
                         <div
-                          className="absolute right-0 top-0 h-full bg-red-900/20"
+                          className="absolute right-0 top-0 h-full bg-[#FF4D4F33]"
                           style={{ width: `${getWidth(index)}%` }}
                         />
                         <span className="relative z-10">{order.qty}</span>

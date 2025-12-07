@@ -36,7 +36,7 @@ export default function PositionsTable({
     <div className="overflow-x-auto">
       <table className="w-full">
         <thead>
-          <tr className="border-b border-slate-700 text-slate-400 text-xs font-medium">
+          <tr className="border-b border-[#2D3134] text-slate-400 text-xs font-medium">
             {columns.map((column) => (
               <th key={column.key} className="px-6 text-nowrap py-4 text-left font-medium text-slate-300">
                 {column.label}

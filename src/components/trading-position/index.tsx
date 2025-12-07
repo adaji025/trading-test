@@ -4,7 +4,6 @@ import * as React from "react";
 import { Check, ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import {
   DropdownMenu,
@@ -19,10 +18,10 @@ export function TradingPositionComponent() {
   const [leverage, setLeverage] = React.useState("5x");
   const [limitType, setLimitType] = React.useState("Limit");
   const [isLong, setIsLong] = React.useState(true);
-  const [tpSlEnabled, setTpSlEnabled] = React.useState(true);
+  const [tpSlEnabled] = React.useState(true);
 
   return (
-    <div className="w-full h-full border-t xl:border-none bg-foreground text-white p-2 border-r border-l border-gray-800">
+    <div className="w-full h-full border-t bg-foreground text-white p-2 border-r border-l border-[#2D3134]">
       {/* Order Type Selectors */}
       <div className="flex space-x-2 mb-6">
         <DropdownMenu>

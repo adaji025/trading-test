@@ -20,9 +20,9 @@ export default function TradingSummaryParent() {
   const [hideSmallBalances, setHideSmallBalances] = useState(false)
 
   return (
-    <div className="min-h-[200px] text-slate-100 md:border-t border-slate-700">
+    <div className="min-h-[200px] text-slate-100 md:border-t border-[#2D3134]">
       {/* Header */}
-      <div className="border-b border-slate-700">
+      <div className="border-b border-[#2D3134] py-1.5">
         <div className="px-2">
           <div className="flex items-center justify-between">
             {/* Tabs */}

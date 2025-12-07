@@ -25,7 +25,7 @@ import { MobileDrawer } from "../mobile-drawer";
 export function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   return (
-    <div className="w-full bg-foreground border-b rounded-b-xl border-gray-800">
+    <div className="w-full bg-foreground border-b rounded-b-xl border-[#2D3134]">
       <div className="flex items-center justify-between px-2 md:px-6 py-3">
         {/* Left Navigation */}
         <div className="flex items-center">
