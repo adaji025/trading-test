@@ -19,13 +19,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { MenuIcon } from "../svg";
 
 export function Header() {
   return (
     <div className="w-full bg-foreground border-b rounded-b-xl border-gray-800">
       <div className="flex items-center justify-between px-6 py-3">
         {/* Left Navigation */}
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center md:space-x-8">
           <NavigationMenu>
             <NavigationMenuList className="space-x-8">
               <NavigationMenuItem>
@@ -118,8 +119,7 @@ export function Header() {
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center space-x-3">
-
+        <div className="flex items-center space-x-2">
           {/* Connect Button */}
           <button className="bg-emerald-500 rounded-full text-xs py-1 hover:bg-emerald-600 text-[#0E0E0E] hover:text-white font-semibold px-4 transition-colors duration-300">
             Connect
@@ -129,7 +129,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="text-white p-0 hover:text-gray-300 hover:bg-gray-800"
+            className="text-white p-0 hover:text-gray-300 hover:bg-gray-800 hidden md:block"
           >
             <Globe className="w-6 h-6" />
           </Button>
@@ -142,6 +142,10 @@ export function Header() {
           >
             <Settings className="w-6 h-6" />
           </Button>
+
+          <button className="md:hidden">
+            <MenuIcon />
+          </button>
         </div>
       </div>
     </div>
