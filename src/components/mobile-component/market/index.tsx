@@ -31,7 +31,7 @@ const Market = () => {
         </TabsList>
 
         <TabsContent value="chart" className="mt-0">
-          <TradingChart />
+          {/* <TradingChart /> */}
         </TabsContent>
 
         <TabsContent value="orderbook" className="mt-0">

@@ -163,7 +163,7 @@ export function OrderBookComponent() {
           </div>
 
           {/* Bottom Controls */}
-          <div className="p-2 border-t border-gray-800">
+          <div className="px-2 md:border-t border-gray-800">
             <div className="flex items-center justify-between">
               <Image
                 src={"/value-map.svg"}

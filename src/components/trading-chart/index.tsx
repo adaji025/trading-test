@@ -54,7 +54,7 @@ export function TradingChart() {
       </div>
 
       {/* Main Trading Interface */}
-      <div className="px-6 py-2">
+      <div className="md:px-6 py-2">
         {/* Trading Pair Header */}
         <div className="mb-6">
           {/* Trading Stats */}

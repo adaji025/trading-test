@@ -20,7 +20,7 @@ export default function TradingSummaryParent() {
   const [hideSmallBalances, setHideSmallBalances] = useState(false)
 
   return (
-    <div className="min-h-[200px] text-slate-100 border-t border-slate-700">
+    <div className="min-h-[200px] text-slate-100 md:border-t border-slate-700">
       {/* Header */}
       <div className="border-b border-slate-700">
         <div className="px-2">
