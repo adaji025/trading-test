@@ -22,6 +22,20 @@ export function TradingPositionComponent() {
   const [price, setPrice] = React.useState("");
   const [size, setSize] = React.useState("");
   const [tp, setTp] = React.useState("0.00");
+  const [sliderValue, setSliderValue] = React.useState(25);
+
+  // Helper function to allow only numbers and decimal point
+  const handleNumericInput = (value: string, setter: (value: string) => void) => {
+    // Allow only numbers, decimal point, and empty string
+    const numericValue = value.replace(/[^0-9.]/g, "");
+    // Prevent multiple decimal points
+    const parts = numericValue.split(".");
+    if (parts.length > 2) {
+      setter(parts[0] + "." + parts.slice(1).join(""));
+    } else {
+      setter(numericValue);
+    }
+  };
 
   return (
     <div className="w-full h-full border-t bg-foreground text-white p-2 border-r border-l border-[#2D3134]">
@@ -164,7 +178,7 @@ export function TradingPositionComponent() {
             <input
               type="text"
               value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) => handleNumericInput(e.target.value, setPrice)}
               placeholder="Price"
               className="bg-transparent text-white text-xs outline-none flex-1"
             />
@@ -177,7 +191,7 @@ export function TradingPositionComponent() {
             <input
               type="text"
               value={size}
-              onChange={(e) => setSize(e.target.value)}
+              onChange={(e) => handleNumericInput(e.target.value, setSize)}
               placeholder="Size"
               className="bg-transparent text-white text-xs outline-none flex-1"
             />
@@ -190,7 +204,7 @@ export function TradingPositionComponent() {
             <input
               type="text"
               value={tp}
-              onChange={(e) => setTp(e.target.value)}
+              onChange={(e) => handleNumericInput(e.target.value, setTp)}
               placeholder="0.00"
               className="bg-transparent text-white text-xs outline-none flex-1"
             />
@@ -201,12 +215,12 @@ export function TradingPositionComponent() {
 
       {/* Position Size Slider */}
       <div className="my-6 px-2 flex items-center gap-4 justify-between mb-4">
-        <RangeSlider />
+        <RangeSlider value={sliderValue} onChange={setSliderValue} />
         <Badge
           variant="outline"
           className="border-gray-600 font-normal text-xs text-white px-2"
         >
-          25 %
+          {sliderValue} %
         </Badge>
       </div>
 
