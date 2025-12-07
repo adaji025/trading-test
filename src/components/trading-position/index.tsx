@@ -23,12 +23,12 @@ export function TradingPositionComponent() {
   return (
     <div className="w-full h-full border-t bg-foreground text-white p-2 border-r border-l border-[#2D3134]">
       {/* Order Type Selectors */}
-      <div className="flex space-x-2 mb-6">
+      <div className="flex space-x-1 mb-6">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="rounded-full text-xs hover:text-white/90 bg-transparent border-[#2D3134] text-white hover:bg-gray-700 flex-1"
+              className="rounded-full w-fit text-xs hover:text-white/90 bg-transparent border-[#2D3134] text-white hover:bg-gray-700"
             >
               {orderType}
               <ChevronDown className="w-4 h-4 ml-2" />
@@ -54,10 +54,10 @@ export function TradingPositionComponent() {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="rounded-full hover:text-white/90 bg-transparent border-[#2D3134] text-white hover:bg-gray-700 flex-1 text-xs"
+              className="rounded-full hover:text-white/90 bg-transparent border-[#2D3134] text-white hover:bg-gray-700 text-xs"
             >
               {leverage}
-              <ChevronDown className="w-4 h-4 ml-2" />
+              <ChevronDown className="w-4 h-4 ml-1" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-gray-800 border-[#2D3134]">
