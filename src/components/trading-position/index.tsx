@@ -19,6 +19,9 @@ export function TradingPositionComponent() {
   const [limitType, setLimitType] = React.useState("Limit");
   const [isLong, setIsLong] = React.useState(true);
   const [tpSlEnabled] = React.useState(true);
+  const [price, setPrice] = React.useState("");
+  const [size, setSize] = React.useState("");
+  const [tp, setTp] = React.useState("0.00");
 
   return (
     <div className="w-full h-full border-t bg-foreground text-white p-2 border-r border-l border-[#2D3134]">
@@ -122,23 +125,21 @@ export function TradingPositionComponent() {
       </div>
 
       {/* Long/Short Toggle */}
-      <div className="flex space-x-2 mb-6 py-1 px-2 rounded-full bg-gray-800">
+      <div className="flex space-x-2 mb-6 py-1 px-2 rounded-full bg-[#1A1D1F]">
         <Button
-          className={`flex-1 rounded-full text-xs cursor-pointer hover:scale-105 transition-all duration-300 ${
-            isLong
-              ? "bg-emerald-600 hover:bg-emerald-700"
+          className={`flex-1 rounded-full text-xs cursor-pointer hover:scale-105 transition-all duration-300 ${isLong
+              ? "bg-custom-emerald hover:bg-emerald-700"
               : "bg-transparent hover:bg-transparent"
-          }`}
+            }`}
           onClick={() => setIsLong(true)}
         >
           Long
         </Button>
         <Button
-          className={`flex-1 rounded-full text-xs cursor-pointer hover:scale-105 transition-all duration-300 ${
-            !isLong
-              ? "bg-emerald-600 hover:bg-emerald-700"
+          className={`flex-1 rounded-full text-xs cursor-pointer hover:scale-105 transition-all duration-300 ${!isLong
+              ? "bg-custom-emerald hover:bg-emerald-700"
               : "bg-transparent hover:bg-transparent"
-          } text-white`}
+            } text-white`}
           onClick={() => setIsLong(false)}
         >
           Short
@@ -159,18 +160,42 @@ export function TradingPositionComponent() {
       <div className="space-y-1">
         {/* Price Input */}
         <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
-          <label className="text-custom-light text-xs">Price</label>
-          <span className="text-custom-light text-xs">USDC</span>
+          <div className="flex items-center gap-2 flex-1">
+            <input
+              type="text"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              placeholder="Price"
+              className="bg-transparent text-white text-xs outline-none flex-1"
+            />
+            <span className="text-custom-light text-xs">USDC</span>
+          </div>
         </div>
         {/* Size Input */}
         <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
-          <label className="text-custom-light text-xs">Size</label>
-          <span className="text-custom-light text-xs">BTC</span>
+          <div className="flex items-center gap-2 flex-1">
+            <input
+              type="text"
+              value={size}
+              onChange={(e) => setSize(e.target.value)}
+              placeholder="Size"
+              className="bg-transparent text-white text-xs outline-none flex-1"
+            />
+            <span className="text-custom-light text-xs">BTC</span>
+          </div>
         </div>
-
+        {/* Tp input */}
         <div className="flex justify-between items-center mb-2 bg-[#1A1D1F] border-[#2D3134] rounded-md py-3 px-2">
-          <span className="text-custom-light text-xs">0.00</span>
-          <span className="text-custom-light text-xs">USDC</span>
+          <div className="flex items-center gap-2 flex-1">
+            <input
+              type="text"
+              value={tp}
+              onChange={(e) => setTp(e.target.value)}
+              placeholder="0.00"
+              className="bg-transparent text-white text-xs outline-none flex-1"
+            />
+            <span className="text-custom-light text-xs">USDC</span>
+          </div>
         </div>
       </div>
 
