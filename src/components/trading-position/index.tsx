@@ -38,7 +38,7 @@ export function TradingPositionComponent() {
   };
 
   return (
-    <div className="w-full h-full border-t bg-foreground text-white p-2 border-r border-l border-[#2D3134]">
+    <div className="w-full h-full border-t bg-foreground text-white p-2 border-r border-l border-[#2D3134] pb-16 md:pb-[unset]">
       {/* Order Type Selectors */}
       <div className="flex space-x-1 mb-6">
         <DropdownMenu>
